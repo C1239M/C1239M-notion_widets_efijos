@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collajedeplanner</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal */
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        /* Estilos de las imágenes */
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.1);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Descripción al pasar el ratón */
+        .image-item:hover .image-desc {
+            opacity: 1;
+        }
+
+        .image-desc {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Títulos */
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-top: 30px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Título de la sección -->
+    <div class="section-title">
+        <h1>Your Inspirational Gallery</h1>
+        <p>Visualiza lo que inspira tu día a día. Un collage para motivarte a alcanzar tus metas.</p>
+    </div>
+
+    <!-- Contenedor del collage -->
+    <div class="collage-container">
+        <!-- Imagen 1 -->
+        <div class="image-item">
+            <img src="https://example.com/inspiracion1.jpg" alt="Inspiración 1">
+            <div class="image-desc">Descubre tu potencial.</div>
+        </div>
+        
+        <!-- Imagen 2 -->
+        <div class="image-item">
+            <img src="https://example.com/inspiracion2.jpg" alt="Inspiración 2">
+            <div class="image-desc">Sigue tus sueños con pasión.</div>
+        </div>
+
+        <!-- Imagen 3 -->
+        <div class="image-item">
+            <img src="https://example.com/inspiracion3.jpg" alt="Inspiración 3">
+            <div class="image-desc">Cada paso te acerca a tus metas.</div>
+        </div>
+
+        <!-- Imagen 4 -->
+        <div class="image-item">
+            <img src="https://example.com/inspiracion4.jpg" alt="Inspiración 4">
+            <div class="image-desc">Sé la mejor versión de ti misma.</div>
+        </div>
+
+        <!-- Imagen 5 -->
+        <div class="image-item">
+            <img src="https://example.com/inspiracion5.jpg" alt="Inspiración 5">
+            <div class="image-desc">La vida está llena de oportunidades.</div>
+        </div>
+
+        <!-- Imagen 6 -->
+        <div class="image-item">
+            <img src="https://example.com/inspiracion6.jpg" alt="Inspiración 6">
+            <div class="image-desc">Cree en ti misma.</div>
+        </div>
+    </div>
+</body>
+</html>
