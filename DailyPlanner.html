@@ -1,11 +1,193 @@
-<div class="widget-container">
-  <h2 class="widget-title">Daily Planner</h2>
-  <p class="widget-description">Plan your day with these essential tools:</p>
-  <ul class="goals-list">
-    <li>🌞 Morning Routine</li>
-    <li>💧 Water Tracker</li>
-    <li>📝 Journal</li>
-    <li>🌿 Habit Tracker</li>
-    <li>✅ Daily Tasks</li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Life Planner 2025notion</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Progress Bar Styles */
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .progress-bar-fill {
+            height: 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            width: 0%;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Life Planner 2025</h1>
+        <h2>Track Your Progress Across Different Areas of Life</h2>
+        
+        <!-- Areas of Life -->
+        <h3>Areas of Life</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Objective</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Work</td>
+                    <td>Advance in my career</td>
+                    <td><div class="progress-bar"><div class="progress-bar-fill" id="work-progress">40%</div></div></td>
+                </tr>
+                <tr>
+                    <td>Health</td>
+                    <td>Improve fitness level</td>
+                    <td><div class="progress-bar"><div class="progress-bar-fill" id="health-progress">60%</div></div></td>
+                </tr>
+                <tr>
+                    <td>Finances</td>
+                    <td>Save $5000</td>
+                    <td><div class="progress-bar"><div class="progress-bar-fill" id="finances-progress">20%</div></div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Goals Table -->
+        <h3>Goals</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Goal</th>
+                    <th>Area</th>
+                    <th>Deadline</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Exercise 4 times a week</td>
+                    <td>Health</td>
+                    <td>03/31/2025</td>
+                    <td><div class="progress-bar"><div class="progress-bar-fill" id="goal1-progress">30%</div></div></td>
+                </tr>
+                <tr>
+                    <td>Get a promotion at work</td>
+                    <td>Work</td>
+                    <td>12/31/2025</td>
+                    <td><div class="progress-bar"><div class="progress-bar-fill" id="goal2-progress">0%</div></div></td>
+                </tr>
+                <tr>
+                    <td>Save $5000</td>
+                    <td>Finances</td>
+                    <td>12/31/2025</td>
+                    <td><div class="progress-bar"><div class="progress-bar-fill" id="goal3-progress">10%</div></div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Actions Table -->
+        <h3>Actions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Goal</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Exercise for 30 minutes 4 times a week</td>
+                    <td>Exercise 4 times a week</td>
+                    <td>02/28/2025</td>
+                    <td><button class="btn" id="action1-btn">Complete</button></td>
+                </tr>
+                <tr>
+                    <td>Read 3 books per month</td>
+                    <td>Get a promotion at work</td>
+                    <td>06/30/2025</td>
+                    <td><button class="btn" id="action2-btn">Complete</button></td>
+                </tr>
+                <tr>
+                    <td>Save $500 each month</td>
+                    <td>Save $5000</td>
+                    <td>12/31/2025</td>
+                    <td><button class="btn" id="action3-btn">Complete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Button to Calculate Progress -->
+        <button class="btn" onclick="updateProgress()">Update Progress</button>
+    </div>
+
+    <script>
+        function updateProgress() {
+            document.getElementById('goal1-progress').style.width = '60%';
+            document.getElementById('goal1-progress').innerHTML = '60%';
+
+            document.getElementById('goal2-progress').style.width = '20%';
+            document.getElementById('goal2-progress').innerHTML = '20%';
+
+            document.getElementById('goal3-progress').style.width = '30%';
+            document.getElementById('goal3-progress').innerHTML = '30%';
+        }
+    </script>
+</body>
+</html>
